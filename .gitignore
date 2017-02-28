@@ -1,0 +1,13 @@
+#ignore all the dist files
+dist/
+
+#ignore temp files
+.tmp/
+
+#ignore node modules
+node_modules/
+
+#ignore bower components
+bower_components/
+
+.DS_Store
