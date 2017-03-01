@@ -59,8 +59,8 @@ gulp.task('copyfonts', ['clean'], function() {
 
 gulp.task('copyviews',['clean'], function(){
     //views html filess
-      return gulp.src('./app/*.html')
-      .pipe(gulp.dest('dist/'));
+      return gulp.src('./app/views/*.html')
+      .pipe(gulp.dest('dist/views'));
 });
 
 // Watch
@@ -75,6 +75,7 @@ gulp.task('watch', ['browser-sync'], function() {
 gulp.task('browser-sync', ['default'], function () {
    var files = [
     'app/**/*.html',
+    'app/views/*.html',
     'app/styles/**/*.css',
     'app/images/**/*.png',
     'app/scripts/**/*.js',
