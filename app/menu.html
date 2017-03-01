@@ -1,4 +1,16 @@
 <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+               <li><a ng-href="#">Home</a></li>
+               <li class="active">Menu</li>
+           </ul>
+        </div>
+        <div class="col-xs-12">
+           <h3>Menu</h3>
+           <hr>
+        </div>
+    </div>
 	<div class="row row-content" ng-controller="MenuController">
 		<div class="col-xs-12">
 			<button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right" type="button">
@@ -29,12 +41,12 @@
 			<div class="tab-content">
 				<ul class="media-list tab-pane fade in active">
 					<li class="media" ng-repeat="dish in dishes | filter:filtText">
-						<div class="media-left media-middle">
-							<a href="#">
-							<img class="media-object img-thumbnail"
-							 ng-src={{dish.image}} alt="Uthappizza">
-							</a>
-						</div>
+                        <div class="media-left media-middle">
+                            <a ng-href="#/menu/{{dish._id}}">
+                            <img class="media-object img-thumbnail"
+                            ng-src={{dish.image}} alt="Uthappizza">
+                            </a>
+                        </div>
 						<div class="media-body">
 							<h2 class="media-heading">{{dish.name}}
 								<span class="label label-danger">{{dish.label}}</span>
