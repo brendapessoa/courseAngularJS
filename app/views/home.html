@@ -5,7 +5,19 @@
             <h3 align="center">Our Lipsmacking Culinary Creations</h3>
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-            <h4>Implement the Featured Dish Here</h4>
+            <div class="media">
+              <div class="media-left">
+                <a ui-sref="app.dishdetails({id: featureDish._id})">
+                  <img class="media-object" src="{{featureDish.image}}" alt="{{featureDish.name}}">
+                </a>
+              </div>
+              <div class="media-body">
+                <h2 class="media-heading">{{featureDish.name}} 
+                    <span class="label label-danger">{{featureDish.label}}</span>
+					<span class="badge">{{featureDish.price | currency}}</span></h2>
+                <p>{{featureDish.description}}</p>
+              </div>
+            </div>
         </div>
     </div>
 
@@ -17,15 +29,15 @@
         </div>
         <div class="col-xs-12 col-sm-9">
             <div class="media">
-              <div class="media-left">
-                <a href="#">
-                  <img class="media-object" src="{{promotion.image}}" alt="{{promotion.name}}">
-                </a>
-              </div>
-              <div class="media-body">
-                  <h2 class="media-heading">{{promotion.name}} <span class="label label-danger">{{promotion.label}}</span> <span class="badge">{{promotion.price | currency}}</span></h2>
-                <p>{{promotion.description}}</p>
-              </div>
+                <div class="media-body">
+                    <h2 class="media-heading">{{promotion.name}} <span class="label label-danger">{{promotion.label}}</span> <span class="badge">{{promotion.price | currency}}</span></h2>
+                    <p>{{promotion.description}}</p>
+                </div>
+                <div class="media-right">
+                    <a href="#">
+                      <img class="media-object" src="{{promotion.image}}" alt="{{promotion.name}}">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -37,8 +49,8 @@
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
             <div class="media">
-              <div class="media-right">
-                <a href="#">
+              <div class="media-left">
+                <a ui-sref="app.aboutus">
                   <img class="media-object" src="{{executiveChef.image}}" alt="{{executiveChef.name}}">
                 </a>
               </div>
