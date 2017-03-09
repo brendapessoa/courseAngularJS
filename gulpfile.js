@@ -30,11 +30,11 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.start('usemin', 'imagemin','copyfonts', 'copyviews');
+    gulp.start('usemin', 'imagemin','copyfonts');
 });
 
 gulp.task('usemin',['jshint'], function () {
-  return gulp.src('./app/*.html')
+  return gulp.src('./app/**/*.html')
       .pipe(usemin({
         css:[minifycss(),rev()],
         js: [ngannotate(), uglify(),rev()]
@@ -57,11 +57,13 @@ gulp.task('copyfonts', ['clean'], function() {
    .pipe(gulp.dest('./dist/fonts'));
 });
 
+/*
 gulp.task('copyviews',['clean'], function(){
     //views html filess
       return gulp.src('./app/views/*.html')
       .pipe(gulp.dest('dist/views'));
 });
+*/
 
 // Watch
 gulp.task('watch', ['browser-sync'], function() {
