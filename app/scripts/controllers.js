@@ -78,18 +78,19 @@ angular.module('confusionApp')
 
         .controller('DishCommentController', ['$scope', function($scope) {
             
-            $scope.mycomment = {rating:5, comment:"", author:"", date:""};
+            $scope.dishComment = {rating:"5", comment:"", author:"", date:""};
             
             $scope.submitComment = function () {
                 
-                $scope.mycomment.date = new Date().toISOString();
-                console.log($scope.mycomment);
+                $scope.dishComment.date = new Date().toISOString();
+                $scope.dishComment.rating = parseInt($scope.dishComment.rating);
+                console.log($scope.dishComment);
                 
-                $scope.dish.comments.push($scope.mycomment);
+                $scope.dish.comments.push($scope.dishComment);
                 
                 $scope.commentForm.$setPristine();
                 
-                $scope.mycomment = {rating:5, comment:"", author:"", date:""};
+                $scope.dishComment = {rating:5, comment:"", author:"", date:""};
             };
         }])
 
