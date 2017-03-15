@@ -107,7 +107,7 @@ angular.module('confusionApp')
                 
                 $scope.dish.comments.push($scope.dishComment);
                 
-                menuFactory.getDishes().update({id:$scope.dish.id}, $scope.dish)
+                menuFactory.getDishes().update({id:$scope.dish.id}, $scope.dish);
                 
                 $scope.commentForm.$setPristine();
                 $scope.dishComment = {rating:5, comment:"", author:"", date:""};
