@@ -13,7 +13,6 @@ var gulp = require('gulp'),
     rev = require('gulp-rev'),
     browserSync = require('browser-sync'),
 	ngannotate = require('gulp-ng-annotate'),
-	debug = require('gulp-debug'),
     del = require('del');
 
 
