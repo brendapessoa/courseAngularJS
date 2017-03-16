@@ -51,7 +51,7 @@
                     </blockquote>
                 </li>
             </ul>
-            <ul class="list-unstyled" ng-show="(!commentForm.author.$error.required && !commentForm.author.$pristine) || (!commentForm.comment.$error.required && !commentForm.comment.$pristine)">
+            <ul class="list-unstyled" ng-show="(!commentForm.author.$error.required && !commentForm.author.$pristine) && (!commentForm.comment.$error.required && !commentForm.comment.$pristine)">
                 <li class="media">
                     <blockquote>
                       <p>{{dishComment.rating}} Stars</p>
