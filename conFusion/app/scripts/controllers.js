@@ -105,6 +105,8 @@ angular.module('confusionApp')
                 $scope.dishComment.rating = parseInt($scope.dishComment.rating);
                 console.log($scope.dishComment);
                 
+                delete $scope.dish.orderBy;
+                
                 $scope.dish.comments.push($scope.dishComment);
                 
                 menuFactory.getDishes().update({id:$scope.dish.id}, $scope.dish);
