@@ -27,4 +27,14 @@ angular.module('confusionApp')
 
     }])
 
+    .service('feedbackFactory', ['$resource', 'baseURL', function($resource, baseURL){
+        
+        this.getFeedback = function(){
+            return $resource(baseURL+"feedback/:id");
+        };
+        
+        
+        
+    }])
+
 ;
