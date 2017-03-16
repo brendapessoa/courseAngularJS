@@ -28,7 +28,6 @@
 
         </div>
         <div class="col-xs-12 col-sm-4">
-
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Facts At a Glance</h3>
@@ -52,7 +51,10 @@
     <div class="row row-content">
         <div class="col-xs-12 col-sm-9">
             <h2>Corporate Leadership</h2>
-            <ul class="media-list">
+            <div ng-if="!showLeadership">
+                <h3>{{message}}</h3>
+            </div>
+            <ul class="media-list" ng-if="showLeadership">
               <li class="media" ng-repeat="ls in leadership">
                 <div class="media-left">
                   <a href="#">

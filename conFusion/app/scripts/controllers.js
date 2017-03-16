@@ -118,7 +118,19 @@ angular.module('confusionApp')
 
         .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory){
             
-            $scope.leadership = corporateFactory.getLeaders();
+            $scope.showLeadership = false;
+            $scope.message = "Loading...";
+            
+            corporateFactory.getLeaders().query()
+            .$promise.then(
+                function(response){
+                    $scope.leadership = response;
+                    $scope.showLeadership = true;
+                },
+                function(response){
+                    $scope.message = "Error "+response.status+ " "+response.statusText;
+                }
+            );
             
             
         }])
